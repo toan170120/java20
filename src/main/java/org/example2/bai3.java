@@ -40,7 +40,11 @@ public class bai3 {
                 System.out.println("\txử lý chuỗi: ");
                 xuLyChuoi();
                 break;
+            default:
+                System.out.println("Xin thử lại");
+
         }
+
 
 
 
