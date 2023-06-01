@@ -1,6 +1,8 @@
 package org.example2;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -112,12 +114,17 @@ public class bai3 {
 //tính tuôi
     public static void tinhTuoi() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhập năm sinh của bạn: ");
-        double oll = sc.nextDouble();
-        LocalDate year = LocalDate.now();
-        double a = year.getYear() - oll;
-        System.out.println("Tuổi hiện tại của bạn: " + a);
-
+        System.out.printf("Nhập ngày tháng năm sinh: ");
+        SimpleDateFormat day = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
+        LocalDate localDate = LocalDate.now();
+        Date date = null;
+        try{
+            date = day.parse(sc.nextLine());
+        }catch (Exception e) {
+        };
+        int intValue = Integer.parseInt(year.format(date));
+        System.out.println("Tuoi hien tại của bạn: " + (localDate.getYear() - intValue));
     }
 
     public static void xuLyChuoi() {
