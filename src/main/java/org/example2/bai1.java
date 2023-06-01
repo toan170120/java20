@@ -13,5 +13,6 @@ public class bai1 {
         String b;
         b = (c == a) ? "đúng":"sai";
         System.out.println(b);
+
     }
 }
