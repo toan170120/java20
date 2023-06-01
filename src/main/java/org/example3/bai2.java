@@ -8,7 +8,7 @@ public class bai2 {
         Scanner sc = new Scanner(System.in);
         Random rd = new Random();
         int a;
-        int random = rd.nextInt(100);
+        int random = rd.nextInt(1);
        do{
            System.out.printf("Nhập giá trị cần đoán: ");
            a = sc.nextInt();
