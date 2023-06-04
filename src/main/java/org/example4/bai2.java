@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class bai2 {
     public static void main(String[] args) {
-        System.out.println("Bài 1: ");
-        fizzBuzz();
-        System.out.println("Bài 2: ");
-        xuatHienNhieu();
-        System.out.println("Bài 3: ");
-        veSao();
-        System.out.println("Bài 4: ");
-        veSaoRong();
+//        System.out.println("Bài 1: ");
+//        fizzBuzz();
+//        System.out.println("Bài 2: ");
+//        xuatHienNhieu();
+//        System.out.println("Bài 3: ");
+//        veSao();
+//        System.out.println("Bài 4: ");
+//        veSaoRong();
         System.out.println("Bài 5: ");
         daoNguoc();
     }
@@ -107,10 +107,17 @@ public class bai2 {
         int du;
         while (a > 0){
             du = a % 10;
+            if(du == 0){
+                System.out.println("Không thể đảo ngược vì chứa đơn vị không");
+                break;
+            }
             b = b * 10 + du;
             a = a/ 10;
         }
-        System.out.println("Số đảo ngược là: " + b);
+        if(a == 0){
+            System.out.println("Số đảo ngược là: " + b);
+        }
+
     }
 
 }
