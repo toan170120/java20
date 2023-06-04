@@ -11,7 +11,7 @@ public class bai1 {
         System.out.printf("Nhập số tự nhiên a = ");
         int a = sc.nextInt();
         String b;
-        b = (c == a) ? "đúng":"sai";
+        b = (c == a) ? "Bạn đã đoán đúng":"Bạn đã đoán sai";
         System.out.println(b);
 
     }
