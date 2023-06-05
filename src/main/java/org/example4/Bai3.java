@@ -25,7 +25,7 @@ public class Bai3 {
                 newArr[i] = arr[i];
             }
         }
-        for(int i = 0; i < arr.length; i++){
+        for(int i = 0; i < n; i++){
             System.out.print("\t" + newArr[i]);
         }
 
