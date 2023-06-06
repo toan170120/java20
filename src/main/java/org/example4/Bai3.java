@@ -16,15 +16,9 @@ public class Bai3 {
             arr[i] = sc.nextInt();
         }
         int[] newArr = new int[n];
-        for(int i = 0; i < n; i++){
-            if(arr[i] % 2 == 0)
-            {
-                newArr[i] = arr[i] + 1;
-            }
-            else{
-                newArr[i] = arr[i];
-            }
-        }
+
+
+
         for(int i = 0; i < n; i++){
             System.out.print("\t" + newArr[i]);
         }
