@@ -72,12 +72,12 @@ public class Bai2 {
 
     public static void lietKeSo2() {
         for (int i = 1000000; i <= 9999999; i++){
-//            if(kiemTraSoNguyenTo(i)){
-//                System.out.println(i);
-//            }
-//            if(kiemTraTungKiTuLaSoNguyenTo(i)){
-//                System.out.println(i);
-//            }
+            if(kiemTraSoNguyenTo(i)){
+                System.out.println(i);
+            }
+            if(kiemTraTungKiTuLaSoNguyenTo(i)){
+                System.out.println(i);
+            }
             if(daoSoNguyenTo(i)){
                 System.out.println(i);
             }
