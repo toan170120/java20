@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 public class Bai2 {
     public static void main(String[] args) {
-        lietKeSo();
-        lietKeSo2();
-        arr();
-        phanTuThuHai();
-        trungBinhCong();
-        doiXung();
+//        lietKeSo();
+//        lietKeSo2();
+//        arr();
+//        phanTuThuHai();
+//        trungBinhCong();
+//        doiXung();
+//        maTran();
+//        thuanNghichSauChuSo();
+//        soChinhPhuong();
+//        minMaxMaTran();
+//        tongCheo();
 
     }
 
@@ -243,4 +248,177 @@ public class Bai2 {
         }
     }
 
+    //Bài 7. Nhập lại khi nhập trùng
+
+
+
+    //Bài 8. tính tích ma trận
+    public static void maTran() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập ma trận m1 = ");
+        int m1 = sc.nextInt();
+        System.out.print("Nhập ma trận n1 = ");
+        int n1 = sc.nextInt();
+        int[][] arr1 = new int[m1][n1];
+
+        for(int i = 0; i < m1; i++){
+            for(int j = 0; j < n1; j++){
+                System.out.printf("a[%d][%d] = ", i, j);
+                arr1[i][j] = sc.nextInt();
+            }
+        }
+        //in ma trận;
+        for(int i = 0; i < m1; i++){
+            for(int j = 0; j <n1; j++){
+                System.out.print(arr1[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+
+
+        System.out.print("Nhập ma trận m2 = ");
+        int m2 = sc.nextInt();
+        System.out.print("Nhập ma trận n2 = ");
+        int n2 = sc.nextInt();
+        int[][] arr2 = new int[m2][n2];
+
+        for(int i = 0; i < m2; i++){
+            for(int j = 0; j < n2; j++){
+                System.out.printf("a[%d][%d] = ", i, j);
+                arr2[i][j] = sc.nextInt();
+            }
+        }
+
+        for(int i = 0; i < m2; i++){
+            for(int j = 0; j <n2; j++){
+                System.out.print(arr2[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        //Nhân 2 ma trận
+        int[][] arr3 = new int[m1][n2];
+        for (int i = 0; i < m1; i++) {
+            for (int j = 0; j < n2; j++) {
+                arr3[i][j] = 0;
+                for (int k = 0; k < n1; k++) {
+                    arr3[i][j] = arr3[i][j] + arr1[i][k] * arr2[k][j];
+                }
+            }
+        }
+        //Hiển thị ma trận.
+        System.out.println("Ma trận tích C: ");
+        for (int i = 0; i < m1; i++) {
+            for (int j = 0; j < n2; j++) {
+                System.out.print(arr3[i][j] + "\t");
+            }
+            System.out.println("\n");
+        }
+
+    }
+
+    //Bài 9. E sử dụng các hàm kiểm tra thuân nghịch, nếu đúng thì
+    //  sử dụng thêm tính tổng các chữ số đã viết tại Bài 1.
+    public static void thuanNghichSauChuSo() {
+        for(int i = 100000; i <= 9999999; i++){
+            if(kiemTraThuanNghich(i)){
+                if(tinhTongChuSo(i) % 10 ==0){
+                    System.out.println(i);
+                }
+            }
+        }
+    }
+
+
+    //Bài 10. Số chính phương.
+    public static void soChinhPhuong() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập số bắt đầu: ");
+        int a = sc.nextInt();
+        System.out.print("Nhập số kết thúc: ");
+        int b = sc.nextInt();
+        for(int i = a; i <=b; i++){
+            if(kiemTraChinhPhuong(i)){
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static boolean kiemTraChinhPhuong(int n) {
+        if(Math.sqrt(n) != (int) Math.sqrt(n)){
+            return false;
+        }
+        return true;
+    }
+
+
+    //Bài 11. tìm max min trong ma trận
+    public static void minMaxMaTran() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập số hàng: ");
+        int n = sc.nextInt();
+        System.out.print("Nhập số cột: ");
+        int m = sc.nextInt();
+
+        int[][] arr = new int[n][m];
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                System.out.printf("a[%d][%d] = ", i, j);
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        int max = arr[0][0];
+        int min = arr[0][0];
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(arr[i][j] > max){
+                    max = arr[i][j];
+                }
+                if(arr[i][j] < min){
+                    min = arr[i][j] ;
+                }
+            }
+        }
+
+        System.out.println("Giá trị lớn nhất trong ma tran: " + max);
+        System.out.println("Giá trị nhỏ nhất trong ma tran: " + min);
+
+
+    }
+
+
+    //Bài 12. tổng đường chéo ma trận
+    public static void tongCheo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập số hàng: ");
+        int n = sc.nextInt();
+        System.out.print("Nhập số cột: ");
+        int m = sc.nextInt();
+
+        int[][] arr = new int[n+1][m+1];
+
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                System.out.printf("a[%d][%d] = ", i, j);
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        int sum = 0;
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                if(i == j){
+                    sum += arr[i][j];
+                }
+            }
+        }
+
+        System.out.println("tổng chéo: " + sum);
+
+
+
+    }
 }
