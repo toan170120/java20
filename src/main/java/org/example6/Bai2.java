@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class Bai2 {
     public static void main(String[] args) {
-//        lietKeSo();
-//        lietKeSo2();
-//        arr();
-//        phanTuThuHai();
-//        trungBinhCong();
-//        doiXung();
-//        maTran();
-//        thuanNghichSauChuSo();
-//        soChinhPhuong();
-//        minMaxMaTran();
-//        tongCheo();
-
+        lietKeSo();
+        lietKeSo2();
+        arr();
+        phanTuThuHai();
+        trungBinhCong();
+        doiXung();
+        maTran();
+        thuanNghichSauChuSo();
+        soChinhPhuong();
+        minMaxMaTran();
+        tongCheo();
+        mangKhongTrung();
     }
 
 
@@ -249,8 +249,29 @@ public class Bai2 {
     }
 
     //Bài 7. Nhập lại khi nhập trùng
+    public static void mangKhongTrung() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử mảng: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        do {
+            for (int i = 0; i < n; i++) {
+                System.out.printf("arr[%d] = ", i);
+                arr[i] = sc.nextInt();
+            }
+        } while (!kiemTraTrung(arr, n));
+    }
 
-
+    public static boolean kiemTraTrung(int[] arr, int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     //Bài 8. tính tích ma trận
     public static void maTran() {
