@@ -2,7 +2,7 @@ package org.example7.bai1;
 
 import java.util.ArrayList;
 
-public class QLCB {
+public class QLCB{
     private ArrayList<CanBo> danhSach;
 
     public QLCB(){

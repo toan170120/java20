@@ -45,7 +45,7 @@ public class CanBo {
     }
 
     public String toString(){
-        return "Ho ten: " + name + "tuổi: " + age +"giới tính: " + gender + "địa chỉ: " + address;
+        return "Ho ten: " + name + " tuổi: " + age +" giới tính: " + gender + " địa chỉ: " + address;
     }
 
 }
