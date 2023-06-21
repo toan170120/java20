@@ -11,6 +11,5 @@ public class QLMuonSach {
         String tenSachMuon = new Scanner(System.in).nextLine();
         System.out.print("Nhập tên bạn cần mượn: ");
         String name = new Scanner(System.in).nextLine();
-
     }
 }
