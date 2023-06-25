@@ -144,5 +144,23 @@ public class ClientListLogic {
         }
     }
 
+    //tính số luong
+    public void calculateService() {
+        Clienting clienting = null;
+        for (int i = 0; i < clientings.length; i++) {
+            clienting = clientings[i];
+            if (clienting == null) {
+                continue;
+            }
+        }
+        Client client = clienting.getClient();
+        double salary = 0;
+        ClientingDetail[] details = clienting.getDetails();
+        for (int i = 0; i <details.length; i++) {
+            Service service = details[i].getService();
+            salary += service.getPrice() * details[i].getServiceNumber();
+        }
+        System.out.println("Chi phi của khách hàng " + client.getName() + "là: " + salary);
+    }
 
 }
